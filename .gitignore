@@ -11,4 +11,4 @@
 .pem
 
 # ignore processed data files (too big for git)
-03_Text_files_for_models/*.txt
+data/Poe_NLG/03_Text_files_for_models/*.txt
