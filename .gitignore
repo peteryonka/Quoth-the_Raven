@@ -1,0 +1,14 @@
+# ignore mac system files
+.DS_store
+
+# ignore jupyter notebook checkpoints
+.ipynb_checkpoints/
+
+# The file containing environment variables
+.env
+
+# keys
+.pem
+
+# ignore processed data files (too big for git)
+03_Text_files_for_models/*.txt
