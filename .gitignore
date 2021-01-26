@@ -10,9 +10,12 @@
 # keys
 .pem
 
+# keep markdown files (especially for files not hosted in repo due to size)
+!code/Poe_NLG/Models/*.md
+
 # ignore folders with large files (too big for git)
 data/Poe_NLG/03_Text_files_for_models/*.txt
-code/Poe_NLG/Models
+code/Poe_NLG/Models/
 
 # keep markdown files (especially for files not hosted in repo due to size)
 !code/Poe_NLG/Models/*.md
