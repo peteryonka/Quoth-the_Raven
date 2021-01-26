@@ -15,7 +15,6 @@
 
 # ignore folders with large files (too big for git)
 data/Poe_NLG/03_Text_files_for_models/*.txt
-code/Poe_NLG/Models/
-
-# keep markdown files (especially for files not hosted in repo due to size)
-!code/Poe_NLG/Models/*.md
+code/Poe_NLG/Models/*/*.txt
+code/Poe_NLG/Models/*/*.pkl
+code/Poe_NLG/Models/*/*.h5
