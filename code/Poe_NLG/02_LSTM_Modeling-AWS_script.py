@@ -44,7 +44,7 @@ def tokenize_words(sequence_list, filter_string='', lower_case=True):
 
 tokenizer, sequences, vocab_size = tokenize_words(sequence_list, filter_string='', lower_case=False)
 
-
+# function to create our independent (X) and dependent variables (y)
 def input_and_output_sequences(sequences, vocab_size):
     sequences = np.array(sequences)
     X, y = sequences[:,:-1], sequences[:, -1]
@@ -54,7 +54,7 @@ def input_and_output_sequences(sequences, vocab_size):
 
 X, y = input_and_output_sequences(sequences, vocab_size)
 
-
+# build our LSTM model
 def build_LSTM_model(vocab_size, seq_length, layer_size=256, embedding=True, embedding_vector_space=128, dropout=True, dropout_rate=0.2):
 
     model = Sequential()
@@ -90,6 +90,7 @@ model, model_name = build_LSTM_model(vocab_size, seq_length)
 
 
 # create checkpoints to save model weights (if an improvement) at each epoch
+# FILES ARE LARGE! 110MB FOR CURRENT MODEL WITH 9M PARAMS -- Adjust for your needs
 if not os.path.exists(f'./Model_weights_{model_name}'):
     os.mkdir(f'./Model_weights_{model_name}')
 
@@ -97,9 +98,10 @@ checkpoint_path = f'./Model_weights_{model_name}/{model_name}_weights' + '-impro
 checkpoint = ModelCheckpoint(checkpoint_path, monitor='loss', verbose=1, save_best_only=True, mode='min')
 callback_list = [checkpoint]
 
+# compile model
 model.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['accuracy'])
 
-
+# fit the model -- don't forget to adjust if you don't want to include the callback to save after each epoch if model improves
 model.fit(X,y, batch_size=64, epochs=100, callbacks=callback_list)
 
 # save model, model summary, tokenizer
