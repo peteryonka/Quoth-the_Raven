@@ -30,8 +30,8 @@ A social media team managing the brand presences for a diverse set of literary c
     * Our literary clients have bodies of existing work (novels, essays, screenplays, etc.).
         * How can we use this to our advantage?
 3. Every Account a VIP
-    * We have limited/shifting account managers for many of our clients. 
-        * How can we maintain the authenticity for each client’s presence? 
+    * We have limited/shifting account managers for many of our clients.
+        * How can we maintain the authenticity for each client’s presence?
 
 In order to meet these three goals, we'll develop a proof of concept application to address each of the three goals:
 1. Drive Web Traffic
@@ -60,7 +60,7 @@ We'll start with Natural Language Generation Model
 
 ## <a name="nlg"></a>Natural Language Generation Model
 ### Data Acquisition
-We'll need a nice clean collection of Poe's writing to train our model on. The cleanest, completest set of Poe's writing is readily available for free as text files at [Project Gutenberg](https://www.gutenberg.org/ebooks/search/?query=edgar+allan+poe&submit_search=Go%21). Miscellaneous rough cleaning was executed on the five volumes of collected works of Poe in a text editor including removing Project Gutenberg text, prefaces and notes not written by Poe, and removing titles. Poetry was also separated from prose writing (though any verse that was included in the short stories was left in the documents). Original text and the trimmed files can be found in the data folder of the repository.
+We'll need a nice clean collection of Poe's writing to train our model on. The cleanest, most complete set of Poe's writing is readily available for free as text files at [Project Gutenberg](https://www.gutenberg.org/ebooks/search/?query=edgar+allan+poe&submit_search=Go%21). Miscellaneous rough cleaning was executed on the five volumes of collected works of Poe in a text editor including removing Project Gutenberg text, prefaces and notes not written by Poe, and removing titles. Poetry was also separated from prose writing (though any verse that was included in the short stories was left in the documents). Original text and the trimmed files can be found in the data folder of the repository.
 
 
 <img src="./images/512px-Edgar_Allan_Poe,_circa_1849,_restored,_squared_off.png" alt="Edgar Allan Poe" caption= 'from Wikipedia' style="width: 100px;"/>
@@ -83,7 +83,7 @@ Utilizing a tutorial from [Jason Brownlee](https://machinelearningmastery.com/ho
 
 The LSTM model was selected for its ability to "remember" past states of our word.
 
-The corpus preparation, model building, and fitting of the data on the model was all done on GPU equipped remote virtual computer on Amazon Web Services. The training was conducted over 8 hours and for 100 epochs. 
+The corpus preparation, model building, and fitting of the data on the model was all done on GPU equipped remote virtual computer on Amazon Web Services. The training was conducted over 8 hours and for 100 epochs.
 
 <img src="./images/AWS_LSTM_final_epocs.png" alt="LSTM final epochs on AWS" style="width: 600px;"/>
 
